@@ -1,16 +1,25 @@
-const searchBook = () => {
-    const searchField =document.getElementById('search-field');
+const getError = document.getElementById('errors');
+
+const searchBooks = () => {
+    const searchField = document.getElementById('search-field');
     const searchText = searchField.value;
     searchField.value = '';
+    if(searchText === ''){
+        getError.innerText = "Search Field Cannot be empty";
+        return;
+    }
+    else{
     const url = `https://openlibrary.org/search.json?q=${searchText}`;
-
     fetch(url)
     .then(res => res.json())
-    .then(data => displaySearchResults(data.docs));
+    .then(data => displaySearchResults(data.docs))
+    }
 }
+
 
 const displaySearchResults = books => {
     const searchResults = document.getElementById('search-result');
+    searchResults.textContent = '';
     books.forEach(book => {
         console.log(book);
         const div = document.createElement('div');
