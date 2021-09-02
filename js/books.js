@@ -30,7 +30,7 @@ const displaySearchResults = books => {
             <img src="https://covers.openlibrary.org/b/id/${book.cover_i}-M.jpg" class="card-img-top" alt="...">
             <div class="card-body">
                 <h5 class = "card-title">${book.title}</h5>
-                <h5>${book.author_name}</h5>
+                <h5>By ${book.author_name}</h5>
                 <h5>Published Year: ${book.first_publish_year}</h5>
                 <p class="card-text">This is a longer card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
             </div>
