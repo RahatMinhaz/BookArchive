@@ -9,12 +9,13 @@ const searchBooks = () => {
         return;
     }
     else{
-    const url = `https://openlibrary.org/search.json?q=${searchText}`;
-    fetch(url)
-    .then(res => res.json())
-    .then(data => displaySearchResults(data.docs))
+        const url = `https://openlibrary.org/search.json?q=${searchText}`;
+        fetch(url)
+        .then(res => res.json())
+        .then(data => displaySearchResults(data.docs))
     }
 }
+
 
 
 const displaySearchResults = books => {
